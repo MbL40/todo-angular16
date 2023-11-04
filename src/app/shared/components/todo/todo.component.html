@@ -1,0 +1,30 @@
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title class="title"> Lista de tareas </mat-card-title>
+  </mat-card-header>
+  <mat-form-field>
+    <mat-label>Agrega una nueva tarea</mat-label>
+    <input
+      matInput
+      name="todoInput"
+      [(ngModel)]="todoToAdd"
+      #todoInputField
+      (keydown.enter)="addTodos()"
+    />
+    <mat-icon matSuffix (click)="addTodos()" style="cursor: pointer"
+      >add</mat-icon
+    >
+  </mat-form-field>
+
+  <div *ngFor="let task of todosList" class="container-task">
+    {{ task.task }}
+    <mat-checkbox
+      #checktask
+      [(ngModel)]="task.isDone"
+      id="{{ task.id }}"
+      (ngModelChange)="updateTodosStatus(checktask)"
+    >
+    </mat-checkbox>
+    <mat-icon style="cursor: pointer;" (click)="deleteTodo(task.id)">delete_forever</mat-icon>
+  </div>
+</mat-card>

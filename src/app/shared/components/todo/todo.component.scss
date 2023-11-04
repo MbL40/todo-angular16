@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.container-task{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% 5% 5%;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  &:hover{
+    background-color: #f4f4f4;
+  }
+}
+
+.update-todo{
+  background-color: green;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
